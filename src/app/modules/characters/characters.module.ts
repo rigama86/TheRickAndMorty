@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharacterComponent } from './components/character/character.component';
-import { ListCharactersComponent } from './components/list-characters/list-characters.component';
 import { ViewCharactersComponent } from './views/view-characters/view-characters.component';
 import { ViewCharacterDescriptionComponent } from './views/view-character-description/view-character-description.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -13,7 +12,8 @@ import { ViewCharacterDescriptionComponent } from './views/view-character-descri
     ViewCharacterDescriptionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     ViewCharactersComponent,

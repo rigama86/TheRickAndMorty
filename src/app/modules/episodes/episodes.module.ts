@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ViewEpisodesComponent } from './views/view-episodes/view-episodes.component';
 import { ViewEpisodesDescriptionComponent } from './views/view-episodes-description/view-episodes-description.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -11,7 +12,8 @@ import { ViewEpisodesDescriptionComponent } from './views/view-episodes-descript
     ViewEpisodesDescriptionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     ViewEpisodesComponent,
