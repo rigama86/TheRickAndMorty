@@ -3,19 +3,19 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
+			<li class="nav-item" routerLinkActive="active">
 				<a class="nav-link" routerLink="">Personajes</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item" routerLinkActive="active">
 				<a class="nav-link" routerLink="locations">Ubicaciones</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" routerLink="Episodes">Episodios</a>
+			<li class="nav-item" routerLinkActive="active">
+				<a class="nav-link" routerLink="episodes">Episodios</a>
 			</li>
 		</ul>
 		<div class="form-inline my-2 my-lg-0">
 			<input (keyup.enter)="search(searchTerm.value)"
-				#searchTerm class="form-control mr-sm-2" type="search" placeholder="¿Qué deseas buscar?" aria-label="Search">
+				#searchTerm class="form-control mr-sm-2" type="search" placeholder="Buscar personaje" aria-label="Search">
 			<button (click)= "search(searchTerm.value)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 		</div>
 	</div>

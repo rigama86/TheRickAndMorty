@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { CharactersModule } from './modules/characters/characters.module';
-import { EpisodesModule } from './modules/episodes/episodes.module';
-import { LocationsModule } from './modules/locations/locations.module';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -24,8 +20,6 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EpisodesModule,
-    LocationsModule,
     HttpClientModule,
     SharedModule,
     StoreModule.forRoot( appReducers ),

@@ -1,15 +1,64 @@
-<div class="card mb-3" style="max-width: 540px;" *ngFor="let character of characters">
-	<div class="row no-gutters">
-		<div class="col-md-4">
-			<img [src]="character.image" class="card-img-top" alt="...">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 col-lg-4 col-md-6 col-sm-6" *ngFor="let character of characters">
+			<div  class="card mb-3" style="max-width: 500px;" >
+				<div class="row no-gutters">
+					<div class="col-md-4">
+						<img [src]="character?.image" class="card-img-top" alt="...">
+					</div>
+					<div class="col-md-8 bg-dark">
+						<div class="card-body text-white">
+							<h5 class="card-title mb-0 "> Personaje: {{character?.name}}</h5>
+							<p class="card-text mb-0"> Origen: {{ character.origin?.name }} </p>
+							<p class="card-text mb-0"> Especie: {{ character?.species }} </p>
+							<p class="card-text mb-0"> Genero: {{ character?.gender }} </p>
+							<p class="card-text mb-0"> # Episodios aparicion: {{ character.episode.length }} </p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<div class="card-body">
-				<h5 class="card-title">{{character.name}}</h5>
-				<p class="card-text"> {{ character.origin.name }} </p>
-				<p class="card-text"> {{ character.species }} </p>
-				<p class="card-text"> {{ character.gender }} </p>
+	</div>
+
+	<div class="row">
+		<div class="col-12 col-lg-4 col-md-6 col-sm-6" *ngFor="let episode of episodes">
+			<div class="card mb-3" style="max-width: 500px;">
+				<div class="row no-gutters">
+					<div class="col-md-3 d-flex align-items-center justify-content-center bg-secondary">
+						<h1 class="text-white">{{episode.id}}</h1>
+					</div>
+					<div class="col-md-9 bg-dark">
+						<div class="card-body text-white">
+							<h5 class="card-title mb-1">Nombre episodio: {{episode?.name}}</h5>
+							<p class="card-text mb-1"> Se estreno: {{ episode.air_date }} </p>
+							<p class="card-text mb-1"> Aparicion de personajes: {{ episode.characters.length }} </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-12 col-lg-3 col-md-4 col-sm-6" *ngFor="let location of locations">
+			<div class="card mb-3" style="max-width: 500px;" >
+				<div class="row no-gutters">
+					<div class="col-md-12 text-white bg-secondary">
+						<h5 class="card-title mb-1 ml-4 m-2">{{location.name}}</h5>
+					</div>
+					<div class="col-md-12 bg-dark">
+						<div class="card-body text-white">
+							<p *ngIf="location.dimension!=='unknown'" class="card-text mb-1"> {{ location.dimension }} </p>
+							<p class="card-text mb-1">Tipo: {{ location.type }} </p>
+							<p class="card-text mb-1">Tipos de residentes: {{ location.residents.length }} </p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+
+

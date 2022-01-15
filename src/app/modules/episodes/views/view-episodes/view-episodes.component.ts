@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Episodes } from '../../../../models/episodes.model';
+import { getEpisodes } from '../../../../store/actions/episodes.actions';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.reducers';
 
 @Component({
   selector: 'app-view-episodes',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewEpisodesComponent implements OnInit {
 
-  constructor() { }
+  episodes : Episodes[] = [];
+
+  constructor( private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.select('episodes').subscribe(({ episodes }) => {
+      this.episodes = episodes;
+    });
+    this.store.dispatch( getEpisodes() );
   }
 
 }
